@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #00ffff);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
+    padding: 20px; /* Add some padding for better spacing */
+}
+
+video {
+    width: 80%;
+    max-width: 600px; /* Limit max width for larger screens */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+#colorName {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Change text color for better visibility */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    video {
+        width: 90%; /* Increase width for smaller screens */
+    }
+
+    #colorName {
+        font-size: 20px; /* Slightly smaller font size on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #colorName {
+        font-size: 18px; /* Even smaller font size for very small screens */
+    }
+
+    .container {
+        padding: 10px; /* Less padding on very small screens */
+    }
+}
